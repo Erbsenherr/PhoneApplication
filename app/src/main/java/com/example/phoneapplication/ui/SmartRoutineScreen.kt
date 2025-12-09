@@ -1,6 +1,5 @@
 package com.example.phoneapplication.ui
 
-import android.adservices.topics.TopicsManager
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -22,7 +21,8 @@ class SmartRoutineScreen {
     fun SmartRoutineScreen(
         viewModel: RoutineViewModel = viewModel()
     ) {
-        val tasks by viewModel.allTasks.collectAsState(initial = emptyList())
+        val routines by viewModel.allTasks.collectAsState(initial = emptyList())
+
 
         Scaffold(
             topBar = {
@@ -39,7 +39,7 @@ class SmartRoutineScreen {
             }
         ) { padding ->
             LazyColumn(contentPadding = padding) {
-                items(tasks) { task: SmartRoutineTask ->
+                items(routines) { task: SmartRoutineTask ->
                     Text(
                         text = task.name, // a property of the task that is to be displayed
                         style = MaterialTheme.typography.bodyLarge,
