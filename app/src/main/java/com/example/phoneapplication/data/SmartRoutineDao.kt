@@ -15,13 +15,12 @@ interface SmartRoutineDao {
 
     // add a task
     @Insert
-    suspend fun insert(task: SmartRoutineTask)
+    suspend fun insert(task: SmartRoutineTask): Long
 
     // update a task
     @Update
-    suspend fun update(task: SmartRoutineTask)
-
+    suspend fun update(task: SmartRoutineTask): Int
     // delete a task
     @Delete
-    suspend fun delete(task: SmartRoutineTask)
+    suspend fun delete(task: SmartRoutineTask): Int
 }

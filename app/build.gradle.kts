@@ -34,6 +34,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    //composeOptions {
+    //    kotlinCompilerExtensionVersion = "1.5.15"
+    //}
     kotlinOptions {
         jvmTarget = "11"
     }
@@ -70,5 +73,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0")
     implementation("androidx.compose.material:material-icons-core:1.5.1")
     implementation("androidx.compose.material:material-icons-extended:1.5.1")
+
 
 }

@@ -3,7 +3,7 @@ package com.example.phoneapplication.taskClasses
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "SmartRoutineTask")
 data class SmartRoutineTask(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val name : String,
