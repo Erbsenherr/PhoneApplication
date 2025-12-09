@@ -1,4 +1,54 @@
 package com.example.phoneapplication.ui
 
+import android.adservices.topics.TopicsManager
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.material.icons.filled.Add
+
+import com.example.phoneapplication.viewModels.RoutineViewModel
+import com.example.phoneapplication.taskClasses.SmartRoutineTask
+
 class SmartRoutineScreen {
-}
+
+    @OptIn(ExperimentalMaterial3Api::class)
+    @Composable
+    fun SmartRoutineScreen(
+        viewModel: RoutineViewModel = viewModel()
+    ) {
+        val tasks by viewModel.allTasks.collectAsState(initial = emptyList())
+
+        Scaffold(
+            topBar = {
+                TopAppBar(title = { Text("Routine Manager Demo") })
+            },
+            floatingActionButton = {
+                FloatingActionButton(onClick = {
+                    viewModel.insertTask(
+                        SmartRoutineTask(name = "Add Task", description = "Add Description")
+                    )
+                }) {
+                    Icon(Icons.Default.Add, contentDescription = "Add Task")
+                }
+            }
+        ) { padding ->
+            LazyColumn(contentPadding = padding) {
+                items(tasks) { task: SmartRoutineTask ->
+                    Text(
+                        text = task.name, // a property of the task that is to be displayed
+                        style = MaterialTheme.typography.bodyLarge,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp)
+                    )
+                    Divider()
+                }
+            }
+        }
+    }}
