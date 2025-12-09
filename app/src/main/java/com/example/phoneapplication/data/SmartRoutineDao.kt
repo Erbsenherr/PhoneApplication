@@ -8,7 +8,6 @@ import kotlinx.coroutines.flow.Flow
 interface SmartRoutineDao {
 
     @Query("SELECT * FROM SmartRoutineTask")
-
     // get all tasks
     fun getAll(): Flow<List<SmartRoutineTask>> // suspend fun: suspend allows functions to run in background
                                                  // and without UI interference --> more control in general
