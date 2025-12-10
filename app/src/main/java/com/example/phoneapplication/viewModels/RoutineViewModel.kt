@@ -15,6 +15,8 @@ import com.example.phoneapplication.taskClasses.SmartRoutineTask
 
 class RoutineViewModel(
     private val repository: SmartRoutineRepository // our repository object/class
+                                                   // compose cant handle an argument in the constructor of a
+                                                   // viewmodel class. This is why we created the factory.
 ) : ViewModel() {
 
     // expose the list of tasks as Flow
