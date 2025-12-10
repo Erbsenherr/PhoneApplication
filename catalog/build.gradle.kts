@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.catalog"
+    namespace = "com.example.catalog" // must be different from other app
     compileSdk {
         version = release(36)
     }
@@ -75,5 +75,5 @@ dependencies {
     implementation(libs.androidx.compose.material.icons.core)
     implementation(libs.androidx.material.icons.extended)
 
-
+    implementation("com.google.android.material:material:1.12.0")
 }
