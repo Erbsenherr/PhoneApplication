@@ -27,7 +27,6 @@ fun AdditionScreen(
     Column(modifier.padding(16.dp)) {
         Text("Add two numbers", style = MaterialTheme.typography.headlineSmall)
         Spacer(Modifier.height(12.dp))
-
         OutlinedTextField(
             value = state.inputA,
             onValueChange = onInputAChange,
