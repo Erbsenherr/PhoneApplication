@@ -13,6 +13,9 @@ import com.example.designsystem.AppTheme // from your design-system module
 import com.example.catalog.screens.ComponentListScreen
 import com.example.catalog.screens.HomeShowcaseScreen
 import com.example.catalog.screens.ProfileShowcaseScreen
+import com.example.feature.simpleAddition.AdditionRoute
+import dagger.hilt.android.AndroidEntryPoint
+
 
 /** purpose of this file:
  * Sets up a Compose environment, applies your Compose design-system theme, and wires simple
@@ -20,6 +23,7 @@ import com.example.catalog.screens.ProfileShowcaseScreen
  * It launches the catalog activity, nothing else!
  */
 
+@AndroidEntryPoint
 class CatalogActivity : ComponentActivity() {
 
     // onCreate: starts the lifecycle
@@ -53,10 +57,13 @@ private fun CatalogNav() {
         { HomeShowcaseScreen() }
         composable("profile") // this is the destination "profile" set to ProfileShowcaseScreen
         { ProfileShowcaseScreen() }
+        composable("addition")
+        { AdditionRoute( navController = navController) }
         composable("list") // as defined previously, this is our starting point!
         { ComponentListScreen(
             onHomeClick = { navController.navigate("home") },
-            onProfileClick = { navController.navigate("profile") }
+            onProfileClick = { navController.navigate("profile") },
+            onAdditionClick = { navController.navigate( "addition" )}
         )
         }
     }

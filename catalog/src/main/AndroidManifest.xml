@@ -4,6 +4,7 @@
     package="com.example.catalog">
 
     <application
+        android:name=".MyCatalogApplication"
         android:allowBackup="false"
         android:label="UI Catalog"
         android:theme="@style/Theme.Material3.DayNight.NoActionBar">

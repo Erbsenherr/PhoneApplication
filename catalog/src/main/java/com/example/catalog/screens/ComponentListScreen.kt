@@ -12,8 +12,9 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ComponentListScreen(
-    onHomeClick: () -> Unit,
-    onProfileClick: () -> Unit
+    onHomeClick: () -> Unit, // declares variables (parameters) that hold a reference to a function
+    onProfileClick: () -> Unit,
+    onAdditionClick: () -> Unit
 ) {
     Column(Modifier.fillMaxSize().padding(16.dp)) {
         Text("UI Catalog", style = MaterialTheme.typography.headlineMedium)
@@ -26,6 +27,11 @@ fun ComponentListScreen(
         ListItem(
             headlineContent = { Text("Profile screen") },
             modifier = Modifier.fillMaxWidth().clickable { onProfileClick() }
+        )
+        Divider()
+        ListItem(
+            headlineContent = { Text("Addition screen") },
+            modifier = Modifier.fillMaxWidth().clickable { onAdditionClick() } // Has to be initialized in the beginning of the file!!!
         )
     }
 }
