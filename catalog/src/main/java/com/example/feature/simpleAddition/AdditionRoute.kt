@@ -6,7 +6,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.feature.simpleAddition.ViewModel.AdditionViewModel
+import com.example.feature.simpleAddition.viewModel.AdditionViewModel
 
 
 

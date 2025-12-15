@@ -5,7 +5,7 @@ plugins {
     id ("com.google.dagger.hilt.android")
     id("kotlin-kapt")
 }
-
+//
 android {
     namespace = "com.example.catalog" // must be different from other app
     compileSdk {
@@ -62,9 +62,8 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation("com.google.dagger:hilt-android:2.52")
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-
+    implementation("com.google.dagger:hilt-android:2.56.2")
+    implementation("androidx.hilt:hilt-navigation-compose:1.3.0")
     implementation(libs.androidx.activity.compose.v182)
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.material3)
@@ -77,9 +76,7 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.compose.material.icons.core)
     implementation(libs.androidx.material.icons.extended)
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-    implementation("com.google.dagger:hilt-android:2.50")
-    kapt ("com.google.dagger:hilt-compiler:2.50")
+    kapt ("com.google.dagger:hilt-compiler:2.56.2")
 
-    implementation("com.google.android.material:material:1.12.0")
+    implementation("com.google.android.material:material:1.13.0")
 }

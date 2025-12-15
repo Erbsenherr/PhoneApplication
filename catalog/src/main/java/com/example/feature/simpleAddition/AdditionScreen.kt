@@ -29,7 +29,10 @@ fun AdditionScreen(
         Spacer(Modifier.height(12.dp))
         OutlinedTextField(
             value = state.inputA,
-            onValueChange = onInputAChange,
+            onValueChange = onInputAChange, // a parameter of OutlinedTextField, takes a string!
+                                            // it calls onInputAChange(DETECTED-STRING), i.e. that what was changed
+                                            // onInputAChange itself is a function inside the vm...
+                                            // ... which changes the state of InputA to the passed variable (DETECTED-STRING)
             label = { Text("First number") },
             modifier = Modifier.fillMaxWidth()
         )

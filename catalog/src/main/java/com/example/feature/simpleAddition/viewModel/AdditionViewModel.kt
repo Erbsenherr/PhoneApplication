@@ -1,7 +1,6 @@
-package com.example.feature.simpleAddition.ViewModel
+package com.example.feature.simpleAddition.viewModel
 
 import kotlinx.coroutines.flow.StateFlow
-import android.view.View
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.example.addNumbers

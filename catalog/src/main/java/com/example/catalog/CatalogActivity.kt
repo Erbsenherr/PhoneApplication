@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -13,6 +14,7 @@ import com.example.designsystem.AppTheme // from your design-system module
 import com.example.catalog.screens.ComponentListScreen
 import com.example.catalog.screens.HomeShowcaseScreen
 import com.example.catalog.screens.ProfileShowcaseScreen
+import com.example.feature.routineElements.ElementListRoute
 import com.example.feature.simpleAddition.AdditionRoute
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -57,13 +59,16 @@ private fun CatalogNav() {
         { HomeShowcaseScreen() }
         composable("profile") // this is the destination "profile" set to ProfileShowcaseScreen
         { ProfileShowcaseScreen() }
+        composable("routines")
+        { ElementListRoute(navController = navController) }
         composable("addition")
         { AdditionRoute( navController = navController) }
         composable("list") // as defined previously, this is our starting point!
         { ComponentListScreen(
             onHomeClick = { navController.navigate("home") },
             onProfileClick = { navController.navigate("profile") },
-            onAdditionClick = { navController.navigate( "addition" )}
+            onAdditionClick = { navController.navigate( "addition" )},
+            onRoutinesClick = {navController.navigate("routines")}
         )
         }
     }

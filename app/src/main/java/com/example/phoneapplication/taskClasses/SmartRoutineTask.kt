@@ -8,7 +8,5 @@ data class SmartRoutineTask(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val name : String,
     val description: String,
-    val startTime : Long? = null,
-    val timeElapsed: Long = 0,
-    val isCompleted: Boolean = false) {
+    val startTime : Long? = null) {
 }
