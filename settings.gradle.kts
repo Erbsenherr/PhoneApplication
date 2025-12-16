@@ -25,3 +25,4 @@ dependencyResolutionManagement {
 rootProject.name = "PhoneApplication"
 include(":app")
 include(":catalog")
+include(":learningenvironment")
