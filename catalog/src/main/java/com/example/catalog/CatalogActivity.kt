@@ -60,15 +60,13 @@ private fun CatalogNav() {
         composable("profile") // this is the destination "profile" set to ProfileShowcaseScreen
         { ProfileShowcaseScreen() }
         composable("routines")
-        { ElementListRoute(navController = navController) }
-        composable("addition")
+
         { AdditionRoute( navController = navController) }
         composable("list") // as defined previously, this is our starting point!
         { ComponentListScreen(
             onHomeClick = { navController.navigate("home") },
             onProfileClick = { navController.navigate("profile") },
-            onAdditionClick = { navController.navigate( "addition" )},
-            onRoutinesClick = {navController.navigate("routines")}
+            onAdditionClick = { navController.navigate( "addition" )}
         )
         }
     }
